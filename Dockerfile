@@ -12,7 +12,8 @@ RUN wget http://dl.google.com/android/android-sdk_r${ANDROID_SDK_VERSION}-linux.
     mv android-sdk-linux /usr/local/bin/android-sdk && \
     rm android-sdk_r${ANDROID_SDK_VERSION}-linux.tgz
 
-RUN echo "y" | android update sdk --no-ui --all --filter tools,platform-tools,${ANDROID_API_LEVELS},build-tools-${ANDROID_BUILD_TOOLS_VERSION}
-
 ENV ANDROID_HOME /usr/local/bin/android-sdk
 ENV PATH $PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+
+RUN echo "y" | android update sdk --no-ui --all --filter tools,platform-tools,${ANDROID_API_LEVELS},build-tools-${ANDROID_BUILD_TOOLS_VERSION}
+
