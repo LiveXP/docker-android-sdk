@@ -10,7 +10,7 @@ RUN dpkg --add-architecture i386 && \
     apt-get update -y && \
     apt-get install -y lib32z1 libc6:i386 libncurses5:i386 libstdc++6:i386
 
-COPY docker-android-sdk-install /usr/local/bin
+COPY scripts /usr/local/bin
 RUN chmod 755 /usr/local/bin/docker-android-sdk-install
 
 RUN wget http://dl.google.com/android/android-sdk_r${ANDROID_SDK_VERSION}-linux.tgz && \
