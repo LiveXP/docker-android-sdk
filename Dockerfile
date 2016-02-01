@@ -11,6 +11,7 @@ RUN dpkg --add-architecture i386 && \
     apt-get install -y libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1
 
 COPY docker-android-sdk-install /usr/local/bin
+RUN chmod 755 /usr/local/bin/docker-android-sdk-install
 
 RUN apt-get install -y \
         lib32stdc++6 \
