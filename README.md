@@ -1,4 +1,4 @@
-# Docker Android SDK 
+# Docker Android SDK [![Build Status](https://travis-ci.org/LiveXP/docker-android-sdk.svg?branch=master)](https://travis-ci.org/LiveXP/docker-android-sdk)
 
 Docker Android image for continuous integration
 
