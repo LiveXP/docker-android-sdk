@@ -2,7 +2,7 @@ FROM java:openjdk-7-jdk
 MAINTAINER LiveXP <dev@livexp.fr>
 
 ENV ANDROID_SDK_VERSION 24.4.1
-ENV ANDROID_API_LEVELS android-16,android-17,android-18,android-19,android-20,android-21,android-22,android-23
+ENV ANDROID_API_LEVELS android-16,android-17,android-18,android-19,android-20,android-21,android-22,android-23,android-24
 
 RUN update-ca-certificates -f
 
