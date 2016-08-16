@@ -1,4 +1,4 @@
-FROM java:openjdk-7-jdk
+FROM java:openjdk-8-jdk
 MAINTAINER LiveXP <dev@livexp.fr>
 
 ENV ANDROID_SDK_VERSION 24.4.1
