@@ -17,7 +17,7 @@ RUN mkdir -p ${ANDROID_SDK_PATH}
 
 RUN wget https://dl.google.com/android/repository/tools_r${ANDROID_SDK_VERSION}-linux.zip && \
     unzip tools_r${ANDROID_SDK_VERSION}-linux.zip && \
-    mv tools /usr/local/bin/android-sdk/ && \
+    mv tools ${ANDROID_SDK_PATH} && \
     rm tools_r${ANDROID_SDK_VERSION}-linux.zip
 
 ENV ANDROID_HOME /usr/local/bin/android-sdk
