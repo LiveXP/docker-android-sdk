@@ -1,7 +1,7 @@
 FROM java:openjdk-8-jdk
 MAINTAINER LiveXP <dev@livexp.fr>
 
-ENV ANDROID_SDK_VERSION 25.2.4
+ENV ANDROID_SDK_VERSION 25.2.5
 ENV ANDROID_SDK_PATH /usr/local/bin/android-sdk
 ENV ANDROID_API_LEVELS android-16,android-17,android-18,android-19,android-20,android-21,android-22,android-23,android-24,android-25
 
