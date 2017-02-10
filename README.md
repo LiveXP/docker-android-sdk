@@ -4,7 +4,7 @@ Docker Android image for continuous integration
 
 ## Usage
 
-You can use this docker image directly from [Docker Hub](https://hub.docker.com/r/livexp/android-sdk/) with `livexp/docker-android-sdk:latest`.
+You can use this docker image directly from [Docker Hub](https://hub.docker.com/r/livexp/android-sdk/) with `livexp/android-sdk:latest`.
 You can use the script `docker-android-sdk-install` to easily add new dependency to Android SDK.
 
 ## Gitlab CI
