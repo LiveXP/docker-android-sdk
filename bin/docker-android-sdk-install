@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/expect
 
 set filter [lindex $argv 0];
 puts "Starting...";
