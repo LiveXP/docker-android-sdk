@@ -9,7 +9,7 @@ RUN update-ca-certificates -f
 
 RUN dpkg --add-architecture i386 && \
     apt-get update -y && \
-    apt-get install -y lib32z1 libc6:i386 libncurses5:i386 libstdc++6:i386
+    apt-get install -y lib32z1 libc6:i386 libncurses5:i386 libstdc++6:i386 expect
 
 COPY bin /usr/local/bin
 RUN chmod 755 /usr/local/bin/docker-android-sdk-install
