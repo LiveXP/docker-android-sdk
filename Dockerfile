@@ -3,7 +3,7 @@ MAINTAINER LiveXP <dev@livexp.fr>
 
 ENV ANDROID_SDK_VERSION 3859397
 ENV ANDROID_SDK_PATH /usr/local/bin/android-sdk
-ENV ANDROID_API_LEVELS android-19;android-20;android-21;android-22;android-23;android-24;android-25;android-26
+ENV ANDROID_API_LEVELS "platforms;android-19" "platforms;android-20" "platforms;android-21" "platforms;android-22" "platforms;android-23" "platforms;android-24" "platforms;android-25" "platforms;android-26"
 
 RUN update-ca-certificates -f
 
@@ -21,9 +21,9 @@ RUN wget https://dl.google.com/android/repository/sdk-tools-linux-${ANDROID_SDK_
     rm sdk-tools-linux-${ANDROID_SDK_VERSION}.zip
 
 ENV ANDROID_HOME /usr/local/bin/android-sdk
-ENV PATH $PATH:$ANDROID_HOME/tools/bin
+ENV PATH $PATH:${ANDROID_HOME}/tools/bin:${ANDROID_HOME}/platform-tools
 
-RUN docker-android-sdk-install platform-tools;${ANDROID_API_LEVELS}
+RUN docker-android-sdk-install "platform-tools" ${ANDROID_API_LEVELS}
 
 RUN rm -rf /var/lib/apt/lists/* && \
     apt-get autoremove -y && \

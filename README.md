@@ -14,7 +14,7 @@ image: livexp/android-sdk:latest
 
 before_script:
   - java -version
-  - docker-android-sdk-install extra-android-m2repository,extra-android-support,build-tools-23.0.2
+  - docker-android-sdk-install "build-tools;26.0.1" "extras;android;m2repository" "extras;google;m2repository" 
 
 junit-android:
   script:
