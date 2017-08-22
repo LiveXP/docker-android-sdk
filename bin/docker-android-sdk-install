@@ -1,13 +1,3 @@
-#!/usr/bin/expect
+#!/bin/bash
 
-set filter [lindex $argv 0];
-puts "Starting...";
-set timeout -1;
-
-spawn android update sdk --no-ui --all --force --filter $filter;
-expect {
-    "Do you accept the license" { exp_send "y\r" ; exp_continue }
-    eof
-}
-
-puts "Done.";
+yes | sdkmanager "$1"
