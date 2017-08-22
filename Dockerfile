@@ -23,7 +23,7 @@ RUN wget https://dl.google.com/android/repository/sdk-tools-linux-${ANDROID_SDK_
 ENV ANDROID_HOME /usr/local/bin/android-sdk
 ENV PATH $PATH:${ANDROID_HOME}/tools/bin:${ANDROID_HOME}/platform-tools
 
-RUN touch ~/.android/repositories.cfg
+RUN mkdir ~/.android && touch ~/.android/repositories.cfg
 
 RUN docker-android-sdk-install "platform-tools" ${ANDROID_API_LEVELS}
 
