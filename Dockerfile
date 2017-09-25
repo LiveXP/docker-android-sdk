@@ -1,5 +1,5 @@
-FROM java:openjdk-8-jdk
-MAINTAINER LiveXP <dev@livexp.fr>
+FROM openjdk:8-jdk
+LABEL maintainer="LiveXP <dev@livexp.fr>"
 
 ENV ANDROID_SDK_VERSION 3859397
 ENV ANDROID_SDK_PATH /usr/local/bin/android-sdk
@@ -30,3 +30,4 @@ RUN docker-android-sdk-install "platform-tools" ${ANDROID_API_LEVELS}
 RUN rm -rf /var/lib/apt/lists/* && \
     apt-get autoremove -y && \
     apt-get clean
+
