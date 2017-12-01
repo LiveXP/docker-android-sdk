@@ -1,6 +1,6 @@
 # Docker Android SDK [![Build Status](https://travis-ci.org/LiveXP/docker-android-sdk.svg?branch=master)](https://travis-ci.org/LiveXP/docker-android-sdk)
 
-Docker Android image for continuous integration
+Docker image for continuous integration with Android SDK.
 
 ## Usage
 
@@ -17,10 +17,10 @@ before_script:
   - docker-android-sdk-install "build-tools;26.0.1" "extras;android;m2repository" "extras;google;m2repository" 
 
 junit-android:
+  stage: test
   script:
     - ./gradlew test
   artifacts:
     paths:
       - app/build/reports/tests
 ```
-

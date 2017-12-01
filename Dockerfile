@@ -36,4 +36,3 @@ RUN docker-android-sdk-install "platform-tools" ${ANDROID_API_LEVELS}
 RUN rm -rf /var/lib/apt/lists/* && \
     apt-get autoremove -y && \
     apt-get clean
-
