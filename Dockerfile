@@ -31,7 +31,7 @@ ENV PATH $PATH:${ANDROID_HOME}/tools/bin:${ANDROID_HOME}/platform-tools:/opt/gra
 
 RUN mkdir ~/.android && touch ~/.android/repositories.cfg
 
-RUN docker-android-sdk-install "platform-tools" ${ANDROID_API_LEVELS}
+RUN yes | sdkmanager "platform-tools" ${ANDROID_API_LEVELS}
 
 RUN rm -rf /var/lib/apt/lists/* && \
     apt-get autoremove -y && \
