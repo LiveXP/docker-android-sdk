@@ -17,13 +17,13 @@ RUN chmod 755 /usr/local/bin/docker-android-sdk-install
 RUN mkdir -p ${ANDROID_SDK_PATH}
 
 RUN wget --quiet https://dl.google.com/android/repository/sdk-tools-linux-${ANDROID_SDK_VERSION}.zip && \
-    unzip sdk-tools-linux-${ANDROID_SDK_VERSION}.zip && \
+    unzip -q sdk-tools-linux-${ANDROID_SDK_VERSION}.zip && \
     mv tools ${ANDROID_SDK_PATH} && \
     rm sdk-tools-linux-${ANDROID_SDK_VERSION}.zip
 
 RUN wget --quiet https://downloads.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip && \
     mkdir /opt/gradle && \
-    unzip -d /opt/gradle gradle-${GRADLE_VERSION}-bin.zip && \
+    unzip -q -d /opt/gradle gradle-${GRADLE_VERSION}-bin.zip && \
     rm gradle-${GRADLE_VERSION}-bin.zip
 
 ENV ANDROID_HOME /usr/local/bin/android-sdk
