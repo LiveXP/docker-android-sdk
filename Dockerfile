@@ -37,12 +37,12 @@ ENV PATH $PATH:${ANDROID_HOME}/tools/bin:${ANDROID_HOME}/platform-tools:/opt/gra
 RUN mkdir ~/.android && touch ~/.android/repositories.cfg
 
 RUN yes | sdkmanager "platform-tools" 
-RUN yes | sdkmanager ${ENV ANDROID_API_LEVELS_4.x}
-RUN yes | sdkmanager ${ENV ANDROID_API_LEVELS_5.x}
-RUN yes | sdkmanager ${ENV ANDROID_API_LEVELS_6.x}
-RUN yes | sdkmanager ${ENV ANDROID_API_LEVELS_7.x}
-RUN yes | sdkmanager ${ENV ANDROID_API_LEVELS_8.x}
-RUN yes | sdkmanager ${ENV ANDROID_API_LEVELS_9.x}
+RUN yes | sdkmanager ${ANDROID_API_LEVELS_4.x}
+RUN yes | sdkmanager ${ANDROID_API_LEVELS_5.x}
+RUN yes | sdkmanager ${ANDROID_API_LEVELS_6.x}
+RUN yes | sdkmanager ${ANDROID_API_LEVELS_7.x}
+RUN yes | sdkmanager ${ANDROID_API_LEVELS_8.x}
+RUN yes | sdkmanager ${ANDROID_API_LEVELS_9.x}
 
 RUN rm -rf /var/lib/apt/lists/* && \
     apt-get autoremove -y && \
