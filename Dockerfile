@@ -34,7 +34,6 @@ RUN yes | sdkmanager "platform-tools"
 #API for Android 4.x
 RUN yes | sdkmanager "platforms;android-19"
 #API for Android 5.x
-RUN yes | sdkmanager "platforms;android-20"
 RUN yes | sdkmanager "platforms;android-21"
 RUN yes | sdkmanager "platforms;android-22"
 #API for Android 6.x
