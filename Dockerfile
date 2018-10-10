@@ -4,7 +4,8 @@ LABEL maintainer="LiveXP <dev@livexp.fr>"
 ENV GRADLE_VERSION 4.2
 ENV ANDROID_SDK_VERSION 4333796
 ENV ANDROID_SDK_PATH /usr/local/bin/android-sdk
-ENV ANDROID_API_LEVELS "platforms;android-19" "platforms;android-20" "platforms;android-21" "platforms;android-22" "platforms;android-23" "platforms;android-24" "platforms;android-25" "platforms;android-26" "platforms;android-27" "platforms;android-28"
+ENV ANDROID_API_LEVELS_PART01 "platforms;android-19" "platforms;android-20" "platforms;android-21" "platforms;android-22" "platforms;android-23" 
+ENV ANDROID_API_LEVELS_PART02 "platforms;android-24" "platforms;android-25" "platforms;android-26" "platforms;android-27" "platforms;android-28"
 
 RUN update-ca-certificates -f
 
@@ -32,7 +33,8 @@ ENV PATH $PATH:${ANDROID_HOME}/tools/bin:${ANDROID_HOME}/platform-tools:/opt/gra
 RUN mkdir ~/.android && touch ~/.android/repositories.cfg
 
 RUN yes | sdkmanager "platform-tools" 
-RUN yes | sdkmanager ${ANDROID_API_LEVELS}
+RUN yes | sdkmanager ${ANDROID_API_LEVELS_PART01}
+RUN yes | sdkmanager ${ANDROID_API_LEVELS_PART02}
 
 RUN rm -rf /var/lib/apt/lists/* && \
     apt-get autoremove -y && \
