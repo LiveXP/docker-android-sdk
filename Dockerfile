@@ -4,12 +4,6 @@ LABEL maintainer="LiveXP <dev@livexp.fr>"
 ENV GRADLE_VERSION 4.2
 ENV ANDROID_SDK_VERSION 4333796
 ENV ANDROID_SDK_PATH /usr/local/bin/android-sdk
-ENV ANDROID_API_LEVELS_4x "platforms;android-19"
-ENV ANDROID_API_LEVELS_5x "platforms;android-20" "platforms;android-21" "platforms;android-22"
-ENV ANDROID_API_LEVELS_6x "platforms;android-23"
-ENV ANDROID_API_LEVELS_7x "platforms;android-24" "platforms;android-25"
-ENV ANDROID_API_LEVELS_8x "platforms;android-26" "platforms;android-27"
-ENV ANDROID_API_LEVELS_9x "platforms;android-28"
 
 RUN update-ca-certificates -f
 
@@ -36,13 +30,23 @@ ENV PATH $PATH:${ANDROID_HOME}/tools/bin:${ANDROID_HOME}/platform-tools:/opt/gra
 
 RUN mkdir ~/.android && touch ~/.android/repositories.cfg
 
-RUN yes | sdkmanager "platform-tools" 
-RUN yes | sdkmanager ${ANDROID_API_LEVELS_4x}
-RUN yes | sdkmanager ${ANDROID_API_LEVELS_5x}
-RUN yes | sdkmanager ${ANDROID_API_LEVELS_6x}
-RUN yes | sdkmanager ${ANDROID_API_LEVELS_7x}
-RUN yes | sdkmanager ${ANDROID_API_LEVELS_8x}
-RUN yes | sdkmanager ${ANDROID_API_LEVELS_9x}
+RUN yes | sdkmanager "platform-tools"
+#API for Android 4.x
+RUN yes | sdkmanager "platforms;android-19"
+#API for Android 5.x
+RUN yes | sdkmanager "platforms;android-20"
+RUN yes | sdkmanager "platforms;android-21"
+RUN yes | sdkmanager "platforms;android-22"
+#API for Android 6.x
+RUN yes | sdkmanager "platforms;android-23"
+#API for Android 7.x
+RUN yes | sdkmanager "platforms;android-24"
+RUN yes | sdkmanager "platforms;android-25"
+#API for Android 8.x
+RUN yes | sdkmanager "platforms;android-26"
+RUN yes | sdkmanager "platforms;android-27"
+#API for Android 9.x
+RUN yes | sdkmanager "platforms;android-28"
 
 RUN rm -rf /var/lib/apt/lists/* && \
     apt-get autoremove -y && \
